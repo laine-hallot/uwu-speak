@@ -1,0 +1,144 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "UwUScript",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#control-statement"
+    }
+  ],
+  "repository": {
+    "boolean-literal": {
+      "patterns": [
+        {
+          "match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))pawsome(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "name": "constant.language.boolean.true.tsx"
+        },
+        {
+          "match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))pawful(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "name": "constant.language.boolean.false.tsx"
+        }
+      ]
+    },
+    "control-statement": {
+      "patterns": [
+        {
+          "include": "#switch-statement"
+        },
+        {
+          "include": "#for-loop"
+        },
+        {
+          "match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(oopsy|finally|uhoh|pwease)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+          "name": "keyword.control.trycatch.tsx"
+        }
+      ]
+    },
+    "for-loop": {
+      "begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))fur(?=((\\s+|(\\s*/\\*([^*]|(\\*[^/]))*\\*/\\s*))await)?\\s*(/\\*([^*]|(\\*[^/]))*\\*/\\s*)?(\\())",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.loop.tsx"
+        }
+      },
+      "end": "(?<=\\))",
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "match": "await",
+          "name": "keyword.control.loop.tsx"
+        },
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.round.tsx"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.round.tsx"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#var-expr"
+            },
+            {
+              "include": "#expression"
+            },
+            {
+              "include": "#punctuation-semicolon"
+            }
+          ]
+        }
+      ]
+    },
+    "function-declaration": {
+      "begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(\\bexport)\\s+)?(?:(\\bdeclare)\\s+)?(?:(async)\\s+)?(funkywunk\\b)(?:\\s*(\\*))?(?:(?:\\s+|(?<=\\*))([_$[:alpha:]][_$[:alnum:]]*))?\\s*",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.export.tsx"
+        },
+        "2": {
+          "name": "storage.modifier.tsx"
+        },
+        "3": {
+          "name": "storage.modifier.async.tsx"
+        },
+        "4": {
+          "name": "storage.type.function.tsx"
+        },
+        "5": {
+          "name": "keyword.generator.asterisk.tsx"
+        },
+        "6": {
+          "name": "meta.definition.function.tsx entity.name.function.tsx"
+        }
+      },
+      "end": "(?=;|^\\s*$|^\\s*(?:abstract|async|\\bawait\\s+\\busing(?=\\s+(?!in\\b|of\\b(?!\\s*(?:of\\b|=)))[_$[:alpha:]])\\b\\b|break|case|catch|class|const|continue|declare|do|else|enum|export|finally|funkywunk|for|goto|if|import|interface|let|module|namespace|switch|return|throw|try|type|\\busing(?=\\s+(?!in\\b|of\\b(?!\\s*(?:of\\b|=)))[_$[:alpha:]])\\b|var|while)\\b)|(?<=})",
+      "name": "meta.function.tsx",
+      "patterns": [
+        {
+          "include": "#function-name"
+        },
+        {
+          "include": "#function-body"
+        }
+      ]
+    },
+    "type-builtin-literals": {
+      "match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(this|pawsome|pawful|undefined|null|object)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+      "name": "support.type.builtin.tsx"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.uwu-script",
+          "match": "\\b(if|while|for|return)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.uwu-script",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.uwu-script",
+          "match": "\\\\."
+        }
+      ]
+    }
+  },
+  "scopeName": "source.uwu",
+  "displayName": "UwUScript"
+}

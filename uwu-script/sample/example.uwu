@@ -1,0 +1,19 @@
+let true = pawsome;
+
+true = pawful;
+
+pwease {
+  if (true === pawful) {
+    uhoh 'oh no'; 
+  }
+} oopsy (error) {}
+
+const desu = [1, 2, 3, 4, 5];
+
+fur (const thing of desu) {
+
+}
+
+funkywunk doStuff() {
+  console.log('Hiiiiiiiiiii :3');
+}

@@ -1,0 +1,3 @@
+[submodule "uwu-parser"]
+	path = uwu-parser
+	url = git@github.com:laine-hallot/uwu-parser.git

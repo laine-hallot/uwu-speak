@@ -1,0 +1,25 @@
+{
+  "name": "uwu-lang",
+  "version": "1.0.0",
+  "description": "Furry UwU speak JavaScript/TypeScript.",
+  "main": "index.js",
+  "workspaces": [
+    "./uwu-parser/",
+    "./uwu-script/",
+    "./uwu-speak/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laine-hallot/uwu-speak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laine-hallot/uwu-speak/issues"
+  },
+  "homepage": "https://github.com/laine-hallot/uwu-speak#readme"
+}

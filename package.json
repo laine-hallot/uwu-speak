@@ -4,13 +4,11 @@
   "description": "Furry UwU speak JavaScript/TypeScript.",
   "main": "index.js",
   "workspaces": [
-    "./uwu-parser/",
     "./uwu-script/",
-    "./uwu-speak/"
+    "./uwu-speak/",
+    "./uwu-playground/",
+    "./uwu-textmate/"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laine-hallot/uwu-speak.git"
@@ -21,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/laine-hallot/uwu-speak/issues"
   },
-  "homepage": "https://github.com/laine-hallot/uwu-speak#readme"
+  "homepage": "https://github.com/laine-hallot/uwu-speak#readme",
+  "dependencies": {
+    "@babel/parser": "^7.27.0",
+    "prettier": "^3.5.3"
+  }
 }

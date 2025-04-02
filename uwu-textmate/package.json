@@ -1,0 +1,21 @@
+{
+  "name": "uwuscript-textmate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "tm-grammars": "^1.23.7",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.4"
+  },
+  "files": [
+    "./dist/",
+    "./package.json"
+  ],
+  "scripts": {
+    "build:lib": "tsc",
+    "build:dist": "node ./lib/index.js"
+  },
+  "author": "Laine Hallot",
+  "license": "ISC",
+  "description": ""
+}

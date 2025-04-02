@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "UwUScript",
+  "name": "uwuscript",
+  "scopeName": "source.uwu",
+  "displayName": "UwUScript",
   "patterns": [
     {
       "include": "#keywords"
@@ -138,7 +140,5 @@
         }
       ]
     }
-  },
-  "scopeName": "source.uwu",
-  "displayName": "UwUScript"
+  }
 }

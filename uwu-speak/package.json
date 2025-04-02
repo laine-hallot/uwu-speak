@@ -2,28 +2,34 @@
   "name": "uwu-speak",
   "version": "1.0.0",
   "description": "Super cute babel pwugin",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "tsc && node dist/runner.js"
+    "build": "vite build && tsc",
+    "start": "vite build && tsc && node dist/runner.js"
   },
   "author": "Laine Hallot",
   "license": "ISC",
   "dependencies": {
-    "@babel/code-frame": "^7.23.5",
-    "@babel/core": "^7.23.7",
-    "@babel/helper-check-duplicate-nodes": "^7.22.5",
-    "@babel/helper-fixtures": "^7.23.4",
-    "@babel/helper-string-parser": "^7.23.4",
-    "charcodes": "^0.2.0",
-    "typescript": "^5.3.3"
+    "@babel/code-frame": "^7.26.2",
+    "@babel/core": "^7.26.10",
+    "@babel/helper-check-duplicate-nodes": "^7.25.9",
+    "@uwuscript/parser": "../../uwu-parser/packages/babel-parser",
+    "@babel/helper-fixtures": "^7.26.0",
+    "charcodes": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/types": "^7.23.6",
     "@types/babel__helper-validator-identifier": "^7.15.2",
     "@types/charcodes": "^0.2.2",
-    "@types/node": "^20.11.0"
+    "@types/node": "^20.11.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.4"
   }
 }

@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "ES2022",
     "lib": ["esnext"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "isolatedModules": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "noImplicitThis": true,
     "noImplicitAny": false,
     "strictBindCallApply": true,
     "incremental": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "./dist/",
     "sourceMap": true
   },

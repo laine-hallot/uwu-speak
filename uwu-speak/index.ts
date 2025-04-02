@@ -1,6 +1,6 @@
 import type { PluginItem } from '@babel/core';
 
-import * as uwuParser from '@uwu/parser';
+import * as uwuParser from '@uwuscript/parser';
 
 export default (): PluginItem => {
   return {
@@ -9,7 +9,6 @@ export default (): PluginItem => {
     },
     visitor: {
       Identifier: (path) => {
-        console.log(path.node.name, path);
         // in this example change all the variable `n` to `x`
         if (path.isIdentifier({ name: 'n' })) {
           path.node.name = 'x';

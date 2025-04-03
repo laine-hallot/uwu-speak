@@ -7,7 +7,7 @@ import UwUScriptTextMate from './mlang.json' with { type: 'json' };
 
 const highlighter = await createHighlighter({
   themes: ['catppuccin-mocha', 'catppuccin-latte'],
-  langs: [UwUScriptTextMate],
+  langs: [UwUScriptTextMate as any],
 });
 
 monaco.languages.register({ id: 'uwuscript' });
@@ -23,14 +23,8 @@ export const UwUEditor: FC<{
 
   useEffect(() => {
     if (editor !== null) {
-      console.log(editor.getModel());
-      editor.onDidChangeModel((event) => {
-        console.log(event.newModelUrl);
-      });
       editor.onDidChangeModelContent((event) => {
-        console.log(event);
         const value = editor.getValue();
-        console.log(value);
         onChange(value);
       });
     }
@@ -41,7 +35,6 @@ export const UwUEditor: FC<{
     if (editorContainer.current !== null) {
       setEditor((editor) => {
         if (editor) return editor;
-        console.log('creating editor');
 
         return monaco.editor.create(editorContainer.current!, {
           value: initialValue,

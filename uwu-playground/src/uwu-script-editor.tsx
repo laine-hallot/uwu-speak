@@ -1,13 +1,5 @@
-import React, {
-  useState,
-  useMemo,
-  useCallback,
-  FC,
-  useEffect,
-  useRef,
-  useLayoutEffect,
-} from 'react';
-import { CodeDisplay } from './output-display';
+import { useState, useCallback } from 'react';
+import { OutputDisplay } from './output-display';
 import { UwUEditor } from './editor';
 
 const code = `
@@ -42,7 +34,7 @@ export const UwUScriptEditor = () => {
   return (
     <div className="grow flex gap-8 w-full">
       <UwUEditor initialValue={code} onChange={handleInput} />
-      <CodeDisplay input={input} />
+      <OutputDisplay input={input} />
     </div>
   );
 };

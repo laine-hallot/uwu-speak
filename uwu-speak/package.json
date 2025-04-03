@@ -19,7 +19,6 @@
     "@babel/code-frame": "^7.26.2",
     "@babel/core": "^7.26.10",
     "@babel/helper-check-duplicate-nodes": "^7.25.9",
-    "@uwuscript/parser": "../../uwu-parser/packages/babel-parser",
     "@babel/helper-fixtures": "^7.26.0",
     "charcodes": "^0.2.0"
   },

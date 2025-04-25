@@ -31,6 +31,18 @@ const CodeDisplay: FC<{ babelResult: BabelFileResult }> = ({ babelResult }) => {
   );
 };
 
+const ErrorDisplay: FC<{ output: { success: false; error: unknown } }> = ({
+  output: { error },
+}) => {
+  const { errorMessage } = useMemo(() => {
+    if (error instanceof SyntaxError) {
+      return { errorMessage: error.message };
+    }
+    return { errorMessage: 'Unknown error occurred while transpiling code' };
+  }, [error]);
+  return <pre className="text-red-400">{errorMessage}</pre>;
+};
+
 export const OutputDisplay: FC<{ input: string }> = ({ input }) => {
   const output = useMemo(() => babelTransform(input), [input]);
 
@@ -41,7 +53,7 @@ export const OutputDisplay: FC<{ input: string }> = ({ input }) => {
         {output.success ? (
           <CodeDisplay babelResult={output.data} />
         ) : (
-          <pre className="text-red-400">{output.error.message}</pre>
+          <ErrorDisplay output={output} />
         )}
       </div>
     </div>
